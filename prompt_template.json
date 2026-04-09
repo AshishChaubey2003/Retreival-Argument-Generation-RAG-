@@ -1,0 +1,86 @@
+{
+  "lc": 1,
+  "type": "constructor",
+  "id": [
+    "langchain",
+    "prompts",
+    "chat",
+    "ChatPromptTemplate"
+  ],
+  "kwargs": {
+    "input_variables": [
+      "job_domain",
+      "job_role",
+      "response_language",
+      "response_tone",
+      "user_level",
+      "word_limit"
+    ],
+    "messages": [
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain",
+          "prompts",
+          "chat",
+          "SystemMessagePromptTemplate"
+        ],
+        "kwargs": {
+          "prompt": {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain",
+              "prompts",
+              "prompt",
+              "PromptTemplate"
+            ],
+            "kwargs": {
+              "input_variables": [],
+              "template": "You are an expert career counselor and HR professional with 15+ years of experience. You help job seekers with resume building, interview preparation, career guidance and job search strategies.",
+              "template_format": "f-string"
+            },
+            "name": "PromptTemplate"
+          }
+        }
+      },
+      {
+        "lc": 1,
+        "type": "constructor",
+        "id": [
+          "langchain",
+          "prompts",
+          "chat",
+          "HumanMessagePromptTemplate"
+        ],
+        "kwargs": {
+          "prompt": {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain",
+              "prompts",
+              "prompt",
+              "PromptTemplate"
+            ],
+            "kwargs": {
+              "input_variables": [
+                "job_domain",
+                "job_role",
+                "response_language",
+                "response_tone",
+                "user_level",
+                "word_limit"
+              ],
+              "template": "\n    I am a {user_level} professional looking for a job in {job_domain} domain.\n    \n    Please help me with the following in {response_language} language:\n    1. What are the top 5 in-demand skills required for {job_role} in 2025?\n    2. How should I prepare my resume for {job_role} position? Give 3 key tips.\n    3. What are the most common interview questions asked for {job_role}? List top 5.\n    4. What is the average salary range for {job_role} in India?\n    5. Which top companies are hiring for {job_role} right now?\n    6. Suggest a 30-day preparation roadmap for cracking {job_role} interview.\n    \n    Keep the tone {response_tone} and the total response within {word_limit} words.\n    ",
+              "template_format": "f-string"
+            },
+            "name": "PromptTemplate"
+          }
+        }
+      }
+    ]
+  },
+  "name": "ChatPromptTemplate"
+}

@@ -23,61 +23,51 @@
 #     else:
 #         st.warning("Please enter a prompt before clicking Summarize.")
 
-
-# dynamics prompt
+# dynamic
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.load import loads
 from dotenv import load_dotenv
 import streamlit as st
+import json
 
 load_dotenv()
 
-# Initialize the model
+# Model
 llm = HuggingFaceEndpoint(
     repo_id="Qwen/Qwen2.5-72B-Instruct",
     task="conversational"
 )
-
 model = ChatHuggingFace(llm=llm)
 
-# Dynamic Prompt Template — 5+ line dynamic human message
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are an expert research assistant with deep knowledge across all domains. "
-               "Your job is to provide well-structured, accurate and insightful research summaries."),
-    ("human", """
-    I am a {user_level} student researching about the topic: {user_topic}.
-    
-    Please help me with the following in {response_language} language:
-    1. Give a brief introduction about {user_topic} in simple words.
-    2. List the top 5 key points about {user_topic} that I must know.
-    3. Explain how {user_topic} is used in real life with 2 practical examples.
-    4. Mention any recent developments or trends related to {user_topic}.
-    5. Suggest 3 resources (books, websites, or courses) where I can learn more about {user_topic}.
-    
-    Keep the tone {response_tone} and the total response within {word_limit} words.
-    """)
-])
+# JSON se prompt load karo
+with open("prompt_template.json", "r") as f:
+    prompt = loads(json.dumps(json.load(f)))
 
 chain = prompt | model
 
-st.header('🔬 Research Tool')
+# UI
+st.header('💼 Job & Career Assistant')
+st.subheader('Your Personal AI Career Counselor')
 
-# Dynamic inputs from user
-user_topic    = st.text_input('📌 Enter your research topic')
-user_level    = st.selectbox('🎓 Your academic level', ['Beginner', 'Intermediate', 'Advanced'])
+job_role          = st.text_input('👔 Enter Job Role', placeholder="e.g. Data Scientist, Software Engineer")
+job_domain        = st.text_input('🏢 Enter Domain', placeholder="e.g. IT, Finance, Marketing")
+user_level        = st.selectbox('🎓 Your Experience Level', ['Fresher', 'Junior (1-3 years)', 'Mid Level (3-5 years)', 'Senior (5+ years)'])
 response_language = st.selectbox('🌐 Response Language', ['English', 'Hindi', 'French', 'Spanish'])
-response_tone = st.selectbox('🎨 Tone of Response', ['formal', 'simple and friendly', 'technical'])
-word_limit    = st.slider('📝 Word Limit', min_value=100, max_value=1000, step=100, value=300)
+response_tone     = st.selectbox('🎨 Tone of Response', ['formal', 'simple and friendly', 'motivational'])
+word_limit        = st.slider('📝 Word Limit', min_value=200, max_value=1500, step=100, value=500)
 
-if st.button('Summarize'):
-    if user_topic.strip():
-        result = chain.invoke({
-            "user_topic": user_topic,
-            "user_level": user_level,
-            "response_language": response_language,
-            "response_tone": response_tone,
-            "word_limit": word_limit
-        })
+if st.button('🚀 Get Career Advice'):
+    if job_role.strip() and job_domain.strip():
+        with st.spinner('Preparing your career advice...'):
+            result = chain.invoke({
+                "job_role": job_role,
+                "job_domain": job_domain,
+                "user_level": user_level,
+                "response_language": response_language,
+                "response_tone": response_tone,
+                "word_limit": word_limit
+            })
+        st.success("✅ Here is your Career Advice!")
         st.write(result.content)
     else:
-        st.warning("⚠️ Please enter a research topic before clicking Summarize.")
+        st.warning("⚠️ Please enter Job Role and Domain before clicking.")

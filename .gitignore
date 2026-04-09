@@ -1,0 +1,5 @@
+.env
+genenv/
+__pycache__/
+*.pyc
+chat_history.json
