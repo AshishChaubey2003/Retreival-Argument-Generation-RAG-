@@ -1,0 +1,22 @@
+{
+  "key_themes": [
+    "performance",
+    "camera quality",
+    "battery life",
+    "USB-C",
+    "build quality",
+    "price",
+    "storage"
+  ],
+  "summary": "The iPhone 15 delivers excellent performance, improved battery life, and premium build quality, but comes with high pricing and limited base storage.",
+  "sentiment": "positive",
+  "pros": [
+    "excellent performance",
+    "great camera",
+    "improved battery",
+    "USB-C support",
+    "premium build"
+  ],
+  "cons": ["high price", "limited base storage"],
+  "name": null
+}
