@@ -12,3 +12,7 @@ Pymupdf
 python-docx
 docx2txt
 unstructured[docx]
+Pandas
+openpyxl
+
+
