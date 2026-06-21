@@ -19,7 +19,7 @@ I'm also posting daily updates on [LinkedIn](https://www.linkedin.com/in/ashishc
 
 | Phase | Topics | Status |
 |-------|--------|--------|
-| **Phase 1** — RAG Foundations | Document loaders, text splitting, embeddings, vector stores, basic retrieval chain | 🔄 In Progress |
+| **Phase 1** — RAG Foundations | Document loaders, text splitting, embeddings, vector stores, basic retrieval chain |Completed  |
 | **Phase 2** — Advanced RAG | Hybrid search, re-ranking, HyDE, Self-RAG, Corrective RAG, Adaptive RAG | ⏳ Upcoming |
 | **Phase 3** — Agentic RAG | LangGraph agents, multi-agent pipelines, autonomous reasoning, memory | ⏳ Upcoming |
 | **Phase 4** — Production & Eval | LangSmith tracing, evaluation metrics, deployment, monitoring | ⏳ Upcoming |
