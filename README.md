@@ -56,7 +56,7 @@ I'm also posting daily updates on [LinkedIn](https://www.linkedin.com/in/ashishc
 ```
 rag-mastery-journey/
 │
-├── day-01/          # RAG basics
+├── day-01/          # Data Ingestion And Parsing
 │   ├── notebook.ipynb
 │   └── README.md
 │
