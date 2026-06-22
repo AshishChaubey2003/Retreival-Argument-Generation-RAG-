@@ -30,7 +30,7 @@ I'm also posting daily updates on [LinkedIn](https://www.linkedin.com/in/ashishc
 
 | Day | Topic | Code | LinkedIn Post |
 |-----|-------|------|---------------|
-| Day 01 | RAG pipeline basics — loaders, splitters, embeddings | [🔗 code](https://github.com/AshishChaubey2003/Retreival-Argument-Generation-RAG-/tree/main/0-DataIngestParsing) | [📝 post](#) |
+| Day 01 | RAG pipeline basics — loaders, splitters, embeddings | [🔗 code](https://github.com/AshishChaubey2003/Retreival-Argument-Generation-RAG-/tree/main/0-DataIngestParsing) | [📝 post](https://www.linkedin.com/feed/update/urn:li:activity:7474661194658807808/) |
 | Day 02 | Vector stores — FAISS vs ChromaDB comparison | [🔗 code](./day-02/) | [📝 post](#) |
 | Day 03 | Retrieval chains with LangChain | [🔗 code](./day-03/) | [📝 post]() |
 | Day 04 | *(coming soon)* | — | — |
