@@ -14,5 +14,10 @@ docx2txt
 unstructured[docx]
 Pandas
 openpyxl
+jq
+Matplotlib
 
+# Embedding models
+langchain-huggingface
+sentence-transformers
 
