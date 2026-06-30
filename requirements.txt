@@ -16,6 +16,7 @@ Pandas
 openpyxl
 jq
 Matplotlib
+faiss-gpu
 
 # Embedding models
 langchain-huggingface
